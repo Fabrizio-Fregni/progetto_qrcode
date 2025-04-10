@@ -1,0 +1,6 @@
+<h1>Lista Aziende</h1>
+<ul>
+  {% for azienda in aziende %}
+    <li>{{ azienda.nome }} (Cliente: {{ azienda.cliente.nome }})</li>
+  {% endfor %}
+</ul>
