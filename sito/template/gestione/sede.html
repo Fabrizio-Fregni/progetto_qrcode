@@ -1,0 +1,6 @@
+<h1>Lista Sedi</h1>
+<ul>
+  {% for sede in sedi %}
+    <li>{{ sede.nome }} (Cliente: {{ sede.cliente.nome }})</li>
+  {% endfor %}
+</ul>

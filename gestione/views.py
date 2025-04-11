@@ -35,3 +35,7 @@ def sede_qr_page(request, sede_id):
         "sede": sede,
         "qr_code": img_str
     })
+
+def lista_aziende(request):
+    aziende = aziende.objects.all()
+    return render(request, 'gestione/aziende.html', {'aziende': aziende})
