@@ -38,3 +38,4 @@ def qr_code_view(request, sede_id):
     img.save(response, "PNG")
     return response
 
+    
