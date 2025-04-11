@@ -14,3 +14,6 @@ def qr_code_view(request, sede_id):
     response = HttpResponse(content_type="image/png")
     img.save(response, "PNG")
     return HttpResponse("Benvenuto nella sezione gestione!");
+
+def home(request):
+    return HttpResponse("Benvenuto nella sezione gestione!")
