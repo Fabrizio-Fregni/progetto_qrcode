@@ -18,9 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
-from django.shortcuts import render
-from django.http import HttpResponse
-from .utils import genera_qr_code # type: ignore
+
 
 urlpatterns = [
     path('', lambda request: redirect('gestione/', permanent=False)),
