@@ -16,8 +16,11 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.http import HttpResponse
 from django.urls import path, include
 from django.shortcuts import redirect
+from gestione import views
+from gestione.utils import genera_qr_code
 
 
 urlpatterns = [
