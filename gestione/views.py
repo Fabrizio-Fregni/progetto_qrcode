@@ -3,7 +3,7 @@ import qrcode
 import base64
 from io import BytesIO
 from django.shortcuts import render
-from gestione.models import Sede
+from .models import Sede
 from .utils import genera_qr_code
 
 def qr_code_view(request, sede_id):
@@ -39,3 +39,7 @@ def sede_qr_page(request, sede_id):
 def lista_aziende(request):
     aziende = aziende.objects.all()
     return render(request, 'gestione/aziende.html', {'aziende': aziende})
+
+def lista_sedi(request):
+    sedi = Sede.objects.select_related('azienda').all()
+    return render(request, 'gestione/sede_list.html', {'sedi': sedi})

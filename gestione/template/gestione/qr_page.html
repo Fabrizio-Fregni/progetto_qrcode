@@ -1,0 +1,14 @@
+<!-- gestione/templates/gestione/qr_page.html -->
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>QR Code - {{ sede.posto }}</title>
+</head>
+<body>
+    <h1>QR Code per la sede: {{ sede.posto }}</h1>
+    <p>Indirizzo: {{ sede.indirizzo }}</p>
+    <p>Azienda: {{ sede.azienda.nome }}</p>
+    <img src="data:image/png;base64,{{ qr_code }}" alt="QR Code">
+</body>
+</html>

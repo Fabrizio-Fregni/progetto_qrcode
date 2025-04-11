@@ -18,12 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.shortcuts import redirect
+from . import views
 
 
 urlpatterns = [
     path('', lambda request: redirect('gestione/', permanent=False)),
     path('admin/', admin.site.urls),
     path('gestione/', include('gestione.urls')),
+    path('sedi/', views.lista_sedi, name='lista_sedi'),
 ]
 
 def qr_code_view(request, sede_id):
@@ -37,5 +39,3 @@ def qr_code_view(request, sede_id):
     response = HttpResponse(content_type="image/png")
     img.save(response, "PNG")
     return response
-
-    

@@ -1,0 +1,6 @@
+<h1>Lista Prodotti</h1>
+<ul>
+  {% for prodotto in prodotti %}
+    <li>{{ prodotto.nome }} (Cliente: {{ prodotto.cliente.nome }})</li>
+  {% endfor %}
+</ul>

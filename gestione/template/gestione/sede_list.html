@@ -1,0 +1,8 @@
+<h1>Lista delle Sedi</h1>
+<ul>
+  {% for sede in sedi %}
+    <li>
+      {{ sede.posto }} – {{ sede.indirizzo }} ({{ sede.azienda.nome }})
+    </li>
+  {% endfor %}
+</ul>
