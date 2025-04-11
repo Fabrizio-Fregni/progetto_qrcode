@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .utils import genera_qr_code
+from .utils import genera_qr_code # type: ignore
 
 def qr_code_view(request, sede_id):
     # Recupera la sede dal DB (oppure usa un URL personalizzato per il prodotto)

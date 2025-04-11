@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .utils import genera_qr_code
 
 def qr_code_view(request, sede_id):
+
     # Recupera la sede dal DB (oppure usa un URL personalizzato per il prodotto)
     sede_url = f"http://esempio.com/sede/{sede_id}"
     
@@ -12,4 +13,4 @@ def qr_code_view(request, sede_id):
     # Ritorna il QR code come risposta (immagine)
     response = HttpResponse(content_type="image/png")
     img.save(response, "PNG")
-    return response
+    return HttpResponse("Benvenuto nella sezione gestione!");
