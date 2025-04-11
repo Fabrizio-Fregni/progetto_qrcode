@@ -17,7 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import redirect  # ⬅️ questo mancava
+from django.shortcuts import redirect
+from django.shortcuts import render
+from django.http import HttpResponse
+from .utils import genera_qr_code # type: ignore
 
 urlpatterns = [
     path('', lambda request: redirect('gestione/', permanent=False)),
@@ -25,4 +28,15 @@ urlpatterns = [
     path('gestione/', include('gestione.urls')),
 ]
 
+def qr_code_view(request, sede_id):
+    # Recupera la sede dal DB (oppure usa un URL personalizzato per il prodotto)
+    sede_url = f"http://esempio.com/sede/{sede_id}"
+    
+    # Genera il QR code
+    img = genera_qr_code(sede_url)
+    
+    # Ritorna il QR code come risposta (immagine)
+    response = HttpResponse(content_type="image/png")
+    img.save(response, "PNG")
+    return response
 
