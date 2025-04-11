@@ -16,4 +16,4 @@ def qr_code_view(request, sede_id):
     return HttpResponse("Benvenuto nella sezione gestione!");
 
 def home(request):
-    return HttpResponse("Benvenuto nella sezione gestione!")
+    return HttpResponse("prova vai!")
