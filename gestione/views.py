@@ -1,5 +1,9 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+import qrcode
+import base64
+from io import BytesIO
+from django.shortcuts import render
+from gestione.models import Sede
 from .utils import genera_qr_code
 
 def qr_code_view(request, sede_id):
@@ -17,3 +21,17 @@ def qr_code_view(request, sede_id):
 
 def home(request):
     return HttpResponse("prova vai!")
+
+def sede_qr_page(request, sede_id):
+    sede = Sede.objects.get(pk=sede_id)
+    url = f"http://esempio.com/sede/{sede_id}"
+
+    qr = qrcode.make(url)
+    buffer = BytesIO()
+    qr.save(buffer, format="PNG")
+    img_str = base64.b64encode(buffer.getvalue()).decode()
+
+    return render(request, "gestione/qr_page.html", {
+        "sede": sede,
+        "qr_code": img_str
+    })
