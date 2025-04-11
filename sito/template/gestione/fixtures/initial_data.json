@@ -1,0 +1,29 @@
+[
+    {
+      "model": "gestione.cliente",
+      "pk": 1,
+      "fields": {
+        "nome": "Mario Rossi",
+        "email": "mario@azienda.it",
+        "telefono": "1234567890"
+      }
+    },
+    {
+      "model": "gestione.azienda",
+      "pk": 1,
+      "fields": {
+        "nome": "TechSolutions SRL",
+        "cliente": 1
+      }
+    },
+    {
+      "model": "gestione.sede",
+      "pk": 1,
+      "fields": {
+        "azienda": 1,
+        "indirizzo": "Via Roma 10",
+        "città": "Milano",
+        "posto": "Ingresso Principale"
+      }
+    }
+  ]
