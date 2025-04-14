@@ -20,7 +20,7 @@ def qr_code_view(request, sede_id):
     return HttpResponse("Benvenuto nella sezione gestione!");
 
 def home(request):
-    return HttpResponse("prova vai!")
+    return HttpResponse("per admin: https://literate-pancake-pj997jvjqpqjhq44-8000.app.github.dev/admin/")
 
 def sede_qr_page(request, sede_id):
     sede = Sede.objects.get(pk=sede_id)
