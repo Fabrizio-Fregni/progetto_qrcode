@@ -28,6 +28,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('gestione/', include('gestione.urls')),
     path('sedi/', views.lista_sedi, name='lista_sedi'),
+    path('qr_code/', views.qr_code_view, name='qr_code'),
 ]
 
 def qr_code_view(request, sede_id):

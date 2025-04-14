@@ -43,3 +43,10 @@ def lista_aziende(request):
 def lista_sedi(request):
     sedi = Sede.objects.select_related('azienda').all()
     return render(request, 'gestione/sede_list.html', {'sedi': sedi})
+
+def qr_code_view(request):
+    url = "https://www.example.com"  # Cambia con l'URL che vuoi codificare
+    img = qrcode.make(url)
+    buffer = BytesIO()
+    img.save(buffer, format="PNG")
+    return HttpResponse(buffer.getvalue(), content_type="image/png")
