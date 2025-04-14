@@ -45,7 +45,7 @@ def lista_sedi(request):
     return render(request, 'gestione/sede_list.html', {'sedi': sedi})
 
 def qr_code_view(request):
-    url = "https://www.example.com"  # Cambia con l'URL che vuoi codificare
+    url = "https://literate-pancake-pj997jvjqpqjhq44-8000.app.github.dev/gestione/"
     img = qrcode.make(url)
     buffer = BytesIO()
     img.save(buffer, format="PNG")
