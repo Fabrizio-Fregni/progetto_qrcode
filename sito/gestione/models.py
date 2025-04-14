@@ -19,10 +19,10 @@ class Sede(models.Model):
     azienda = models.ForeignKey(Azienda, on_delete=models.CASCADE)
     indirizzo = models.CharField(max_length=255)
     città = models.CharField(max_length=100)
-    posto = models.CharField(max_length=100)
+    luogo = models.CharField(max_length=100)
     
     def __str__(self):
-        return f"{self.posto} - {self.indirizzo}"
+        return f"{self.luogo} - {self.indirizzo}"
 
 class Prodotto(models.Model):
     nome = models.CharField(max_length=100)

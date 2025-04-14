@@ -88,7 +88,7 @@ class Migration(migrations.Migration):
                 ),
                 ("indirizzo", models.CharField(max_length=255)),
                 ("città", models.CharField(max_length=100)),
-                ("posto", models.CharField(max_length=100)),
+                ("luogo", models.CharField(max_length=100)),
                 (
                     "azienda",
                     models.ForeignKey(
